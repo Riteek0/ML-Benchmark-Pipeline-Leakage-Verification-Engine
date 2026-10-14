@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  benchmark:
+    build: .
+    image: ml-benchmark-leakage-engine:2026
+    environment:
+      - PYTHONHASHSEED=2026
+    command: python3 -m src.benchmark_runner --n-samples 100000 --positive-rate 0.035 --n-trials 25
